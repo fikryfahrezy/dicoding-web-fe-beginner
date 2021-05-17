@@ -1,0 +1,330 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway&display=swap");
+
+.far,
+.fas {
+  font-family: "Font Awesome 5 Free";
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 1;
+}
+
+.far {
+  font-weight: 400;
+}
+
+.fas {
+  font-weight: 900;
+}
+
+.fa-trash-alt:before {
+  content: "\f2ed";
+}
+
+.fa-check-square:before {
+  content: "\f14a";
+}
+
+.fa-undo:before {
+  content: "\f0e2";
+}
+
+.fa-search:before {
+  content: "\f002";
+}
+
+.fa-edit:before {
+  content: "\f044";
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Raleway", sans-serif;
+}
+
+header {
+  padding: 16px;
+  color: #fff;
+  background: #5f30e2;
+}
+
+.wrapper {
+  max-width: 1250px;
+  display: flex;
+  margin: 0 auto;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.wrapper .container {
+  width: 720px;
+  margin: 16px;
+  padding: 16px;
+  border-radius: 8px;
+  background: #f8f9fa;
+  flex-grow: 1;
+  box-shadow: 0 5px 10px rgba(154, 160, 185, 0.05);
+}
+
+#search-form {
+  height: 65px;
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+
+#search-form > input {
+  width: 100%;
+  height: 100%;
+  margin-right: 5px;
+  padding: 16px;
+  background: #f5f1ff;
+  border: 2px solid #9475ea;
+  border-radius: 8px;
+  font-size: 24px;
+}
+
+#search-form > button {
+  height: 100%;
+  padding: 12px 24px;
+  color: #5f30e2;
+  border: 2px solid #5f30e2;
+  border-radius: 8px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.form-header {
+  text-align: center;
+}
+
+.form {
+  display: flex;
+  padding: 16px;
+  border-radius: 16px;
+  flex-direction: column;
+}
+
+.form-title {
+  margin: auto 0;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 4px;
+  font-size: 18;
+  font-weight: lighter;
+}
+
+.form-group > input {
+  padding: 16px;
+  margin-bottom: 8px;
+  background: #f5f1ff;
+  border: 2px solid #9475ea;
+  border-radius: 8px;
+  font-size: 24px;
+}
+
+#year {
+  width: 125px;
+}
+
+#book-id {
+  position: absolute;
+  z-index: -1;
+}
+
+.form-checkbox {
+  flex-direction: row;
+}
+
+.form-checkbox > label {
+  margin-left: 10px;
+}
+
+.form-buttons {
+  display: flex;
+  margin-top: auto;
+  justify-content: flex-end;
+}
+
+.btn-submit {
+  width: fit-content;
+  padding: 12px 24px;
+  margin: 5px;
+  color: #111;
+  border: 2px solid #5f30e2;
+  border-radius: 16px;
+  font-size: 24px;
+  align-self: flex-end;
+  cursor: pointer;
+}
+
+#search-form > button:hover,
+.btn-submit:hover {
+  color: #fff;
+  background: #5f30e2;
+}
+
+.form-group > input,
+.btn-submit:focus {
+  outline: none;
+}
+
+.tabs {
+  height: 65px;
+  display: flex;
+  padding: 0 !important;
+  background: #f5f1ff !important;
+}
+
+.tab {
+  width: 50%;
+  position: relative;
+}
+
+.tab label {
+  height: 100%;
+  display: grid;
+  text-align: center;
+  place-items: center;
+  cursor: pointer;
+}
+
+.tab [type="radio"] {
+  display: none;
+}
+
+[type="radio"] ~ label::after {
+  content: "";
+  width: 100%;
+  height: 2px;
+  display: none;
+  background: #5f30e2;
+  position: absolute;
+  bottom: 0;
+  animation: slidein 1s;
+}
+
+[type="radio"]:checked ~ label::after {
+  display: block;
+}
+
+@keyframes slidein {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+.grid {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-auto-rows: 20px;
+}
+
+.item {
+  border-radius: 16px;
+  background: #fff;
+}
+
+.content {
+  padding: 12px;
+}
+
+.item .inner {
+  margin-bottom: 15px;
+}
+
+.item .inner h2 {
+  margin-bottom: unset;
+  margin-top: unset;
+}
+
+.item .inner p {
+  margin: 5px 0;
+}
+
+.action-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.action-button {
+  display: flex;
+  color: #5f30e2;
+  background-color: transparent;
+  border: none;
+  font-size: 40px;
+  align-items: flex-end;
+  cursor: pointer;
+}
+
+.trash-button:hover > i,
+.edit-button:hover > i,
+.check-button:hover > i {
+  font-weight: 900;
+}
+
+.undo-button > i {
+  transition: all 0.25s 0s;
+}
+
+.undo-button:hover > i {
+  transform: rotateZ(-180deg);
+}
+
+.check-button:focus,
+.trash-button {
+  outline: none;
+}
+
+@media only screen and (max-width: 1024px) {
+  .wrapper {
+    flex-direction: column;
+  }
+
+  .wrapper .container {
+    width: 100%;
+    margin: 0;
+  }
+
+  .wrapper > div {
+    order: 1;
+  }
+
+  .wrapper > .form-container {
+    order: 0;
+  }
+
+  .list-item {
+    width: 90%;
+  }
+
+  .form {
+    width: 100%;
+  }
+}
